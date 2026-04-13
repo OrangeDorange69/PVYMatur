@@ -1,0 +1,16 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open --e2e --browser edge"
+  },
+  "devDependencies": {
+    "cypress": "^15.7.1",
+    "typescript": "^5.9.3"
+  }
+}
