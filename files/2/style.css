@@ -1,0 +1,102 @@
+/* h1{
+    color: yellow;
+    background-color: black;
+} */
+
+/*  Selektory */
+h1{
+    color:blue;
+}
+
+.first{
+    color: black;
+}
+
+#voyna{
+    color: aliceblue;
+}
+
+
+/* ˇproměnné */
+:root{
+    --main-color: red;
+    --primary: blue;
+    --secondary:green;
+}
+
+h1{
+    color: var(--main-color);
+    background-color: var(--primary);
+}
+
+/* barvy */
+/*klíčová slova */
+/* red, green, blue, yellow */
+h1{
+    color:red;
+}
+
+/* RGB */
+h1{
+    color: rgba(204, 77, 77, 0.575);
+}
+
+/* hexacedimální zápis */
+h1{
+    color: #0000;
+}
+
+/* popovídat o developerské konzoli */
+
+/* blokové elementy a řádkové elementy */
+/* blokové jsou na jednom řádku */
+
+h1{
+    display:block; /*výchozí hodnota u h1*/
+    display:inline;
+}
+
+/* řádkové jsou vvedle sebe */
+a{
+    display:block;
+    display:inline; /*výchozí hodnota u a*/
+}
+
+/* jednotky */
+#test{
+    width: 40px;
+    height: 40px;
+}
+
+#test{
+    width: 30%;
+}
+
+h1{
+    font-size:2rem;
+}
+
+p{
+    font-size:1.5rem;
+}
+
+h1{
+    color: red;
+    font-size: 30px;
+    display: block;
+    background-color: yellow;
+    width: auto;
+    height: auto;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 2px solid blue;
+    margin:20px; /*vnější okraj*/
+    padding: 15px; /*vnitřní okraj*/
+}
+
+/* tvorba tlačítka */
+a{
+    background-color: black;
+    color:turquoise;
+    padding: 10px 5px;
+    text-decoration: none;
+}

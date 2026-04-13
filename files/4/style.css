@@ -1,0 +1,37 @@
+div{
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    /*transition: all 0.3s linear;*/
+    /* transition: .5s; */
+    animation: moving-better;
+    animation-duration: 3s;
+    animation-delay: 4s;
+    animation-fill-mode: backwards; /*pustit prvni prvek keyframu hned, necekame na delay*/
+    animation-iteration-count: 3; /*kolikrat jede animace dokola*/
+    animation-direction: alternate;
+    
+    animation: moving-better 3s 4s backwards infinite alternate; 
+}
+
+div:hover{
+    /* scale = zvetseni, rotate, rotace, translateY otoceni po ose Y, translateZ otoceni po ose Z */
+
+    /* transform: scale(1.2);
+    transform: rotate(15deg); */
+    /* transform:translateY(-20px); */
+    transform: translateX(-20px);
+    transform: translate(-20px, 500px);
+}
+
+@keyframes moving{
+    0% {transform: translateX(0);}
+    100%{transform: translateX(1000px); }
+}
+
+
+@keyframes moving-better{
+    0% {transform: translateX(0); }
+    50%{transform: translateX(1000px);}
+    100%{transform: translate(1000px, 500px);}
+}

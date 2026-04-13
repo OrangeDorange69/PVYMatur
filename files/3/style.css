@@ -1,0 +1,28 @@
+div{
+    width: 150px;
+    height: 150px;
+}
+
+.first{
+    background-color: red;
+}
+
+.second{
+    background-color: blue;
+}
+
+.third{
+    background-color: green;
+}
+
+.box{
+    display: flex;
+    flex-direction: column; /*vychozi hodnota = row, moznosti: column, reverse = prevraci poradi obracene*/
+    justify-content: center; /*flex start, flex end, centre, spacebetween = mezi, prostor ktery tam zbyva, spaceevenly = stejne velke, spacearound = duplicitni prostor dvakrat */
+    align-items: center; /*dorovnat itemy na start, na stredn (center), na konec (end)*/
+
+    /*mezery mezi prvky*/
+    row-gap: 20px; /*nastavit gap mezi radkama*/
+    column-gap: 20px; /*nastavit gap mezi sloupeckama*/
+    gap: 20px;
+} 
