@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Code Viewer</title>
+    <!-- Syntax Highlighting VS Code Dark+ Theme -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vsc-dark-plus.min.css" rel="stylesheet" />
+    <!-- Line Numbers Plugin CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>PRŮZKUMNÍK</h2>
+                <div class="header-actions">
+                    <span class="action-btn">...</span>
+                </div>
+            </div>
+            <div class="upload-section">
+                <div id="loading-status" style="font-size: 13px; font-weight: 500; color: var(--accent); padding: 8px 12px; background: rgba(0, 122, 204, 0.1); border-radius: 4px; text-align: center;">
+                    Připojování k repozitáři...
+                </div>
+            </div>
+            <div class="file-tree" id="file-tree">
+                <div class="empty-state">Zatím nebyly nahrány žádné soubory</div>
+            </div>
+        </aside>
+
+        <main class="editor-area">
+            <div class="tabs-bar" id="tabs-bar">
+            </div>
+            <div class="breadcrumbs" id="breadcrumbs">
+                <span class="breadcrumb-item">Žádný soubor není vybrán</span>
+            </div>
+            <div class="code-container" id="code-container">
+                <pre class="line-numbers"><code id="code-display" class="language-plaintext">// PVY Maturita 2026 (c) OrangeDorange69
+// Made by Orangedorange69 with redbull zero and coffee!</code></pre>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Core Prism -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- Line numbers plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <!-- Autoloader for other languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <!-- App Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
