@@ -4,6 +4,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const codeDisplay = document.getElementById('code-display');
     const breadcrumbs = document.getElementById('breadcrumbs');
     const loadingStatus = document.getElementById('loading-status');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const sidebar = document.querySelector('.sidebar');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+
+    const toggleMobileMenu = () => {
+        sidebar.classList.toggle('open');
+        mobileOverlay.classList.toggle('open');
+        if (mobileOverlay.classList.contains('open')) {
+            mobileOverlay.style.display = 'block';
+            setTimeout(() => mobileOverlay.style.opacity = '1', 10);
+        } else {
+            mobileOverlay.style.opacity = '0';
+            setTimeout(() => { if (!mobileOverlay.classList.contains('open')) mobileOverlay.style.display = 'none'; }, 300);
+        }
+    };
+
+    if (mobileMenuBtn && mobileOverlay) {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileOverlay.addEventListener('click', toggleMobileMenu);
+    }
 
     // format: { name: string, language: string, id: string, path: string, content: string | null, rawUrl: string }
     const files = new Map();
@@ -122,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const isFolderB = node[b]._isFolder;
                 if (isFolderA && !isFolderB) return -1;
                 if (!isFolderA && isFolderB) return 1;
-                return a.localeCompare(b);
+                return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
             });
 
             keys.forEach(key => {
@@ -248,6 +268,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         setActiveFile(id);
+        
+        if (window.innerWidth <= 768 && sidebar && sidebar.classList.contains('open')) {
+            toggleMobileMenu();
+        }
     };
 
     const closeFile = (id) => {
@@ -289,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             breadcrumbs.innerHTML = `<span class="breadcrumb-item">Žádný soubor není vybrán</span>`;
             codeDisplay.className = "language-plaintext";
-            codeDisplay.textContent = "// Klikni vlevo na soubor – automaticky se načte tvůj repozitář OrangeDorange69/PVYMatur";
+            codeDisplay.textContent = "// Klikni vlevo na soubor, automaticky by se měl načíst z repozitáře.";
             if (window.Prism) {
                 Prism.highlightElement(codeDisplay);
             }

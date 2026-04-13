@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Code Viewer</title>
+    <title>PVY Maturita 2026</title>
     <!-- Syntax Highlighting VS Code Dark+ Theme -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vsc-dark-plus.min.css" rel="stylesheet" />
     <!-- Line Numbers Plugin CSS -->
@@ -16,10 +16,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Mobile background overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
     <div class="app-container">
         <aside class="sidebar">
             <div class="sidebar-header">
-                <h2>PRŮZKUMNÍK</h2>
+                <h2>PRŮZKUMNÍK PVY OTÁZEK</h2>
                 <div class="header-actions">
                     <span class="action-btn">...</span>
                 </div>
@@ -37,12 +40,17 @@
         <main class="editor-area">
             <div class="tabs-bar" id="tabs-bar">
             </div>
-            <div class="breadcrumbs" id="breadcrumbs">
-                <span class="breadcrumb-item">Žádný soubor není vybrán</span>
+            <div class="breadcrumbs" id="breadcrumbs-container">
+                <button id="mobile-menu-btn" class="mobile-menu-btn">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+                <div id="breadcrumbs" class="breadcrumbs-content">
+                    <span class="breadcrumb-item">Žádný soubor není vybrán</span>
+                </div>
             </div>
             <div class="code-container" id="code-container">
                 <pre class="line-numbers"><code id="code-display" class="language-plaintext">// PVY Maturita 2026 (c) OrangeDorange69
-// Made by Orangedorange69 with redbull zero and coffee!</code></pre>
+// Made by OrangeDorange69 with redbull zero and coffee!</code></pre>
             </div>
         </main>
     </div>
